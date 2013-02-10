@@ -1,27 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Prueba</title>
-	<meta charset="utf-8">
-	<meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;">
-	<script src="phonegap.js"></script>
-	<script>
-	function onBodyLoad(){
-		document.addEventListener("deviceready",onDeviceReady, false);
-	}
-	function onDeviceReady(){
-		var element = document.getElementById('appInfo');
-		element.innerHTML = 'PhoneGap version ( ' + device.phonegap + ')<br>' + device.platform + ' ' + device.name + ' (version ' + device.version + ').';
-	}
-	</script>
-	<style>
-	body{
-		background-color: rgba(0,0,255,0.4);
-	}
-	</style>
-<body onLoad="onBodyLoad()">
-	<h1>Aloha</h1>
-	<p id="appInfo">Waiting for phonegap initialization to complete</p>
-</body>
+<meta http-equiv="Content-type" content="text/html;
+charset=utf-8">
+<meta name="viewport" id="viewport"
+content="width=device-width, height=device-height,
+initial-scale=1.0, maximum-scale=1.0,
+user-scalable=no;" />
+<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
+<script src="jquery-1.9.1.min.js"></script>
+<script src="jquery.mobile-1.2.0.js"></script>
+<script src="phonegap.js"></script>
+<script>
+function onBodyLoad() {
+document.addEventListener("deviceready", onDeviceReady,
+false);
+}
+function onDeviceReady() {
+//Get the appInfo DOM element
+var element = document.getElementById('appInfo');
+//replace it with specific information about the device
+//running the application
+element.innerHTML = 'PhoneGap (version ' +
+device.phonegap + ')<br />' + device.platform + ' ' +
+device.name + ' (version ' + device.version + ').';
+}
+</script>
 </head>
+<body onload="onBodyLoad()">
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<h1>HelloWorld4</h1>
+</div>
+<div data-role="content">
+<p>This is a PhoneGap application that makes calls to
+the PhoneGap APIs and uses the jQuery Mobile
+framework.</p>
+<p id="appInfo">Waiting for PhoneGap Initialization to
+complete</p>
+</div>
+<div data-role="footer" data-position="fixed">
+<h1>PhoneGap Essentials</h1>
+</div>
+</div>
+</body>
 </html>
