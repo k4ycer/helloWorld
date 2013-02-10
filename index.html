@@ -10,7 +10,8 @@
 		document.addEventListener("deviceready",onDeviceReady, false);
 	}
 	function onDeviceReady(){
-		navigator.notification.alert('Que pedo wilbis galan');	
+		var element = document.getElementById('appInfo');
+		element.innerHTML = 'PhoneGap version ( ' + device.phonegap + ')<br>' + device.platform + ' ' + device.name + ' (version ' + device.version + ').';
 	}
 	</script>
 	<style>
@@ -20,6 +21,7 @@
 	</style>
 <body onLoad="onBodyLoad()">
 	<h1>Aloha</h1>
+	<p id="appInfo">Waiting for phonegap initialization to complete</p>
 </body>
 </head>
 </html>
